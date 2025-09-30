@@ -21,6 +21,7 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
 
+    // Section 2.24 -- START
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
@@ -34,6 +35,7 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
         });
         return new ResponseEntity<>(validationErrors, HttpStatus.BAD_REQUEST);
     }
+    // Section 2.24 -- END
 
     // Section 2.23 - Exception handling -- START
     @ExceptionHandler(Exception.class)

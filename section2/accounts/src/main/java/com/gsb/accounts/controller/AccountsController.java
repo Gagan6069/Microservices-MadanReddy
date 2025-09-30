@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 @AllArgsConstructor
-@Validated
+@Validated // Section 2.24
 public class AccountsController {
 
     private IAccountsService iAccountsService;
@@ -86,7 +86,7 @@ public class AccountsController {
      */
     @GetMapping("/fetch")
     public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam
-                                                           @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+                                                           @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits") // Section 2.24
                                                            String mobileNumber) {
         CustomerDto customerDto = iAccountsService.fetchAccount(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(customerDto);
@@ -157,7 +157,7 @@ public class AccountsController {
 
     @DeleteMapping("/delete")
     public ResponseEntity<ResponseDto> deleteAccountDetails(@RequestParam
-                                                            @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+                                                            @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits") // Section 2.24
                                                             String mobileNumber) {
         boolean isDeleted = iAccountsService.deleteAccount(mobileNumber);
         if(isDeleted) {
