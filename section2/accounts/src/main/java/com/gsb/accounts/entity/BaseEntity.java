@@ -19,19 +19,19 @@ import java.time.LocalDateTime;
 @Getter @Setter @ToString
 public class BaseEntity {
 
-    @CreatedDate
+    @CreatedDate //Section 2.25
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @CreatedBy
+    @CreatedBy //Section 2.25
     @Column(updatable = false)
     private String createdBy;
 
-    @LastModifiedDate
+    @LastModifiedDate //Section 2.25
     @Column(insertable = false)
     private LocalDateTime updatedAt;
 
-    @LastModifiedBy
+    @LastModifiedBy //Section 2.25
     @Column(insertable = false)
     private String updatedBy;
 }
