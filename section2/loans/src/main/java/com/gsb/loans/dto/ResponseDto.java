@@ -1,6 +1,5 @@
-package com.gsb.accounts.dto;
+package com.gsb.loans.dto;
 
-//import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
