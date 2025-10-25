@@ -1,6 +1,7 @@
 package com.gsb.accounts.controller;
 
 import com.gsb.accounts.constants.AccountsConstants;
+import com.gsb.accounts.dto.AccountsContactInfoDto;
 import com.gsb.accounts.dto.CustomerDto;
 import com.gsb.accounts.dto.ErrorResponseDto;
 import com.gsb.accounts.dto.ResponseDto;
@@ -57,6 +58,9 @@ public class AccountsController {
 
     @Autowired
     private Environment environment;
+
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto; //6.71
 
     // Section 2.28 -- START
     @Operation(
@@ -242,5 +246,31 @@ public class AccountsController {
                 .body(environment.getProperty("JAVA_HOME"));
     }
 
+    // 6.71 -- Start
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
+    }
+    // 6.71 -- End
 
 }
