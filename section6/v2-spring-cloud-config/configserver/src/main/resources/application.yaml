@@ -5,12 +5,18 @@ spring:
   application:
     name: "configserver"
   profiles:
-     active: native
-#    active: git
+#     active: native
+    active: git   #6.85
   cloud:
     config:
       server:
-       native:
-#       search-locations: "classpath:/config"
-       search-locations: "file:///home//gsb//Desktop//Study//Courses//MS-MadanReddy" #6.84
+#       native:
+##       search-locations: "classpath:/config"
+#       search-locations: "file:///home//gsb//Desktop//Study//Courses//MS-MadanReddy" #6.84
+       git:   #6.85
+         uri: "https://github.com/eazybytes/eazybytes-config.git"
+         default-label: main #branch-name
+         timeout: 5
+         clone-on-start: true
+         force-pull: true
 
