@@ -11,4 +11,6 @@ spring:
     config:
       server:
        native:
-       search-locations: "classpath:/config"
+#       search-locations: "classpath:/config"
+       search-locations: "file:///home//gsb//Desktop//Study//Courses//MS-MadanReddy" #6.84
+
