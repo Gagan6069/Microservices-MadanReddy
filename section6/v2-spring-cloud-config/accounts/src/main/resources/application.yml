@@ -25,9 +25,10 @@ spring:
 #    port: 5672
 #    username: "guest"
 #    password: "guest"
-#
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
+
+# 6.87
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
