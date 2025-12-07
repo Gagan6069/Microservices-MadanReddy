@@ -66,6 +66,7 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
+#  119. Demo of Client Side Service Discovery & Load balancing
   loans1:
     image: "gsb05/loans:s8"
     container_name: loans-ms1
