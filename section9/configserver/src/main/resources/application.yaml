@@ -1,0 +1,39 @@
+server:
+  port: 8071
+
+encrypt: #6.86
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9"
+
+spring:
+  application:
+    name: "configserver"
+  profiles:
+#     active: native
+    active: git   #6.85
+  cloud:
+    config:
+      server:
+#       native:
+##       search-locations: "classpath:/config"
+#       search-locations: "file:///home//gsb//Desktop//Study//Courses//MS-MadanReddy" #6.84
+       git:   #6.85
+         uri: "https://github.com/eazybytes/eazybytes-config.git"
+         default-label: main #branch-name
+         timeout: 5
+         clone-on-start: true
+         force-pull: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health: #6.91
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
