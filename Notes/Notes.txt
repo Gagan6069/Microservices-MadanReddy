@@ -1,0 +1,9 @@
+Section 10:140
+
+localhost:8070
+
+http://localhost:8072/actuator
+
+localhost:8072/actuator/circuitbreakers
+
+localhost:8072/actuator/circuitbreakerevents?name=accountsCircuitBreaker
