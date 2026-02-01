@@ -7,3 +7,20 @@ http://localhost:8072/actuator
 localhost:8072/actuator/circuitbreakers
 
 localhost:8072/actuator/circuitbreakerevents?name=accountsCircuitBreaker
+
+---- Docker Push Commands
+docker image push docker.io/gsb05/accounts:s10
+docker image push docker.io/gsb05/loans:s10
+docker image push docker.io/gsb05/cards:s10
+docker image push docker.io/gsb05/configserver:s10
+docker image push docker.io/gsb05/gatewayserver:s10
+docker image push docker.io/gsb05/eurekaserver:s10
+
+
+
+localhost:8072/eazybank/accounts/api/java-version
+
+ab -n 10 -c 2 -v 3 http://localhost:8072/eazybank/cards/api/contac-info
+
+
+
