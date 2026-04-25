@@ -1,5 +1,5 @@
 -- To create docker image using Google Jib
-mvn compile jib:dockerBuild
+	mvn compile jib:dockerBuild
 
 Section 12:200
 Microservices Security
@@ -13,12 +13,14 @@ localhost:8072/actuator/circuitbreakers
 localhost:8072/actuator/circuitbreakerevents?name=accountsCircuitBreaker
 
 ---- Docker Push Commands
-docker image push docker.io/gsb05/accounts:s12
-docker image push docker.io/gsb05/loans:s12
-docker image push docker.io/gsb05/cards:s12
-docker image push docker.io/gsb05/configserver:s12
-docker image push docker.io/gsb05/gatewayserver:s12
-docker image push docker.io/gsb05/eurekaserver:s12
+docker image push docker.io/gsb05/accounts:s13
+docker image push docker.io/gsb05/loans:s13
+docker image push docker.io/gsb05/cards:s13
+docker image push docker.io/gsb05/configserver:s13
+docker image push docker.io/gsb05/gatewayserver:s13
+docker image push docker.io/gsb05/eurekaserver:s13
+docker image push docker.io/gsb05/message:s13
+
 
 --
 docker compose up -d
@@ -36,7 +38,10 @@ mvn clean compile jib:build
 
 C:\Users\bhati\.m2\repository\io\opentelemetry\javaagent\opentelemetry-javaagent\2.22.0\opentelemetry-javaagent-2.22.0.jar
 
-
+-- rabitmq
+localhost:15672
+guest
+guest
 
 
 
